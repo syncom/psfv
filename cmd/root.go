@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/syncom/psfv/cmd/softball"
 	"github.com/syncom/psfv/version"
 )
 
@@ -12,9 +13,9 @@ var rootCmd = &cobra.Command{
 	Use:   "psfv",
 	Short: "",
 	Long:  ``,
-	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
-	},
+	//Run: func(cmd *cobra.Command, args []string) {
+	// Do Stuff Here
+	//},
 }
 
 func Execute() {
@@ -25,6 +26,7 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(softball.SoftballCmd)
 }
 
 var versionCmd = &cobra.Command{
