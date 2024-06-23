@@ -1,6 +1,6 @@
 # psfv: Estimate Baseball/Softball Pitch Speed from Video Clip
 
-`psfv` (Pitching Speed From Video) is a simple tool to estimate the speed of a
+`psfv` (Pitch Speed From Video) is a simple tool to estimate the speed of a
 pitched softball or baseball from a video clip (i.e., one that was taken using a
 cell phone's camera), without using more accurate equipment such as
 [PITCHf/x](https://en.wikipedia.org/wiki/PITCHf/x) or a radar gun.

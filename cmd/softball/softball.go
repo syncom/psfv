@@ -23,22 +23,22 @@ var mountToPlateDistanceAndOffsetInFeet = map[string][2]float64{
 
 var SoftballCmd = &cobra.Command{
 	Use:   "softball",
-	Short: "Analyze fastpitch softball pitching videos to estimate pitching speed",
-	Long: `Analyze fastpitch softball pitching videos to estimate pitching speed
+	Short: "Analyze fastpitch softball pitching videos to estimate pitch speed",
+	Long: `Analyze fastpitch softball pitching videos to estimate pitch speed
 	
-	Input video file should contain a softball pitcher throwing a pitch, where the
-	clip starts when the ball leaves the pitcher's hand, and ends when it crosses
-	the home plate. The video is analyzed to determine the speed of the pitch.
-	
-	Estimation is based on the age group of the game (8u, 10u, 12u, 14u and
-	above)`,
+Input video file should contain a softball pitcher throwing a pitch, where the
+clip starts when the ball leaves the pitcher's hand, and ends when it crosses
+the home plate. The video is analyzed to determine the speed of the pitch.
+
+Estimation is based on the age group of the game (8u, 10u, 12u, 14u and
+above)`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		vpath := args[0]
 		duration := getDurationOfVideo(vpath)
 		fmt.Printf("Duration of video: %f\n", duration)
 		fmt.Printf("Age group: %s\n", strings.ToLower(ageGroup))
-		speed := getAveragePitchingSpeed(ageGroup, duration)
+		speed := getAveragePitchSpeed(ageGroup, duration)
 		fmt.Printf("Average pitch speed: %f mph (%f kph)\n", speed, MphToKph(speed))
 	},
 }
@@ -66,8 +66,8 @@ func getDurationOfVideo(path string) float64 {
 	return data.Format.DurationSeconds
 }
 
-// getAveragePitchingSpeed returns the average pitching speed in mph
-func getAveragePitchingSpeed(ageGroup string, flyingTime float64) float64 {
+// getAveragePitchSpeed returns the average pitch speed in mph
+func getAveragePitchSpeed(ageGroup string, flyingTime float64) float64 {
 	ag := strings.ToLower(ageGroup)
 	dist_offset, ok := mountToPlateDistanceAndOffsetInFeet[ag]
 	if !ok {
