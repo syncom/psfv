@@ -11,11 +11,13 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "psfv",
-	Short: "",
-	Long:  ``,
-	//Run: func(cmd *cobra.Command, args []string) {
-	// Do Stuff Here
-	//},
+	Short: "Pitch Speed From Video",
+	Long: `Estimate the speed of a pitch from a video clip of a pitcher throwing a softball or baseball.
+	
+This tool depends on the ffprobe tool to extract video metadata. The video
+clip should start when the ball leaves the pitcher's hand and end when it
+crosses the home plate. The tool will estimate the speed of the pitch based on
+the duration of the video clip and the age group of the game.`,
 }
 
 func Execute() {
