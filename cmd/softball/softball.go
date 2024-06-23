@@ -39,7 +39,7 @@ var SoftballCmd = &cobra.Command{
 		fmt.Printf("Duration of video: %f\n", duration)
 		fmt.Printf("Age group: %s\n", strings.ToLower(ageGroup))
 		speed := getAveragePitchingSpeed(ageGroup, duration)
-		fmt.Printf("Average pitching speed: %f mph (%f kph)\n", speed, MphToKph(speed))
+		fmt.Printf("Average pitch speed: %f mph (%f kph)\n", speed, MphToKph(speed))
 	},
 }
 
