@@ -46,12 +46,14 @@ sudo apt install ffmpeg
 Install `psfv`
 
 ```bash
-go install github.com/syncom/psfv
+go install github.com/syncom/psfv@latest
 ```
 
 ### Prepare the video clip
 
-Before AI can help us do better, one needs to do the video clip preparation step manually. The manual work here isn't too difficult, yet needs to be performed carefully.
+Before AI can help us do better, one needs to do the video clip preparation step
+manually. The manual work here isn't too difficult, yet needs to be performed
+carefully.
 
 To obtain the input video clip for `psfv`, load your game footage into a video
 editor supporting video trimming at the frame level. For example, [QuickTime
